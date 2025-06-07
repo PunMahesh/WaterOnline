@@ -32,7 +32,7 @@ WaterOnline/
 │   ├── css/
 │   ├── js/
 │   └── images/
-├── 📁 templates/           # Jinja2 HTML templates
+├── 📁 templates/           # HTML templates
 │   ├── index.html
 ├── 📁 data/               # Application data files
 ├── 📁 dataset/            # Training datasets and ML models
@@ -49,7 +49,7 @@ WaterOnline/
 
 - **Python 3.9+**
 - **pip** (Python package manager)
-- **MongoDB** (Database)
+- **SQlite** (Database)
 - **Git** (Version control)
 
 ### Installation
@@ -105,12 +105,6 @@ The application will be available at `http://localhost:5000`
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- Flask community for the excellent web framework
-- MongoDB team for the robust database solution
-- All contributors and users of WaterOnline
-- Open source community for inspiration and tools
 
 ---
 
