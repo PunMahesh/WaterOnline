@@ -1,9 +1,7 @@
 # 💧 WaterOnline
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Flask](https://img.shields.io/badge/flask-2.3+-green.svg)](https://flask.palletsprojects.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-green.svg)](https://www.mongodb.com/)
 
 A comprehensive Flask-based platform for efficient water resource management, monitoring, and analytics. WaterOnline empowers organizations to make data-driven decisions for sustainable water management through real-time monitoring, intelligent analytics, and interactive visualizations.
 
