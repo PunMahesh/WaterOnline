@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ project_name }} | Welcome</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='js/3dModel.js') }}"
+    ></script>
+    <script
+      src="{{ url_for('static', filename='js/chat_storage.js') }}"
+    ></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </head>
+  <body>
+
+      <div class="title">
+        <h1>{{ project_name }}</h1>
+      </div>
+      <div id="three-container" class='three-container'>
+        <img
+          src="{{ url_for('static', filename='assets/images/ai-assistant.png') }}"
+          alt="ai-assistant"
+          id="ai-assistant"
+          onclick="toggleWaterBot()">
+      </div>
+
+<section class="section_container">
+       <div class="dashboard-header">
+        <h1>💧 Water Potability Dashboard</h1>
+        <p>Comprehensive Analysis of Water Quality Metrics</p>
+    </div>
+
+    <div class="container">
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Samples</h3>
+                <div class="stat-value total" id="totalSamples">-</div>
+                <p>Water samples analyzed</p>
+            </div>
+            <div class="stat-card">
+                <h3>Potable Water</h3>
+                <div class="stat-value potable" id="potableSamples">-</div>
+                <p>Safe to drink</p>
+            </div>
+            <div class="stat-card">
+                <h3>Non-Potable Water</h3>
+                <div class="stat-value non-potable" id="nonPotableSamples">-</div>
+                <p>Not safe to drink</p>
+            </div>
+            <div class="stat-card">
+                <h3>Average pH</h3>
+                <div class="stat-value avg" id="avgPH">-</div>
+                <p>Acidity level</p>
+            </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+            <!-- Potability Distribution -->
+            <div class="chart-card">
+                <h3>🔍 Potability Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="potabilityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- pH Distribution -->
+            <div class="chart-card">
+                <h3>⚗️ pH Level Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="phDistributionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Water Quality Metrics -->
+            <div class="chart-card">
+                <h3>📊 Average Quality Metrics</h3>
+                <div class="chart-container">
+                    <canvas id="qualityMetricsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- pH vs Potability -->
+            <div class="chart-card">
+                <h3>🧪 pH Levels by Sample</h3>
+                <div class="chart-container">
+                    <canvas id="phChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Hardness Distribution -->
+            <div class="chart-card">
+                <h3>💎 Hardness Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="hardnessChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Quality Parameters Comparison -->
+            <div class="chart-card">
+                <h3>⚖️ Potable vs Non-Potable Comparison</h3>
+                <div class="chart-container large">
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loading">
+            <div class="spinner"></div>
+            Loading water quality data...
+        </div>
+    </div>
+    </section>
+
+    <div id="popup">
+      <button id="close-popup">&times;</button>
+      <div id="popup-content"></div>
+    </div>
+
+    <div id="instructions">
+      Click on the red pins to learn about different oceans!<br />
+      Drag to rotate • Scroll to zoom
+    </div>
+
+<div class="waterbot" id="waterbot" style="display: none;">
+  <div id="chat-history" class="chat-history"></div>
+
+  <textarea
+    id="question"
+    placeholder="Ask about water quality..."
+    rows="3"
+    cols="50"
+  ></textarea>
+
+  <button id="ask" onclick="askAI()">Ask WaterBot</button>
+</div>
+
+  </body>
+</html>
